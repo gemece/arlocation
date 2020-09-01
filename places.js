@@ -113,10 +113,10 @@ function renderPlaces(places) {
                     container.parentElement.removeChild(container);
                 }, 1500);
             }
-
+        };
 
         icon.addEventListener('click', clickListener);
 
         scene.appendChild(icon);
-    });
+    
 }
