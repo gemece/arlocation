@@ -77,14 +77,15 @@ function dynamicLoadPlaces(position) {
 function renderPlaces(places) {
     let scene = document.querySelector('a-scene');
 
-    places.forEach((place) => {
-        const latitude = place.location.lat;
-        const longitude = place.location.lng;
+
+        const latitude = 41.6439116;
+        const longitude = -4.7173093;
+        const name = "Your place name";
 
         // add place icon
         const icon = document.createElement('a-image');
         icon.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude}`);
-        icon.setAttribute('name', place.name);
+        icon.setAttribute('name', name);
         icon.setAttribute('src', './map-marker.png');
 
         // for debug purposes, just show in a bigger scale, otherwise I have to personally go on places...
@@ -112,7 +113,7 @@ function renderPlaces(places) {
                     container.parentElement.removeChild(container);
                 }, 1500);
             }
-        };
+
 
         icon.addEventListener('click', clickListener);
 
